@@ -1,8 +1,13 @@
-# load required packages
+# set working directory to directory with this script
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+# load required packages, first three should already be installed from classes
 library(tidyverse)
 library(leaflet)
-library(sf)
-library(RJSONIO)
+library(RJSONIO) # you will need to install
+library(rgdal) # you will need to install, and also install raster package
+library(htmlwidgets) # to save the leaflet map
+library(htmltools) # to add some custom code into map, you will need to install
 
 # load data
 private <- read_csv("data/private.csv")
@@ -10,15 +15,21 @@ public <- read_csv("data/public.csv")
 terminals <- read_csv("data/terminals.csv")
 metro <- read_csv("data/metro.csv")
 
+# process private data, adding city and country if not present!
 private <- private %>%
-  filter(!is.na(address))
+  filter(!is.na(address)) %>%
+  select(1,2)
 
 # process metro data
 metro <- metro %>%
-  separate(`Geo Point`, into = c("latitude","longitude"), sep = ",")
+  separate(`Geo Point`, into = c("latitude","longitude"), sep = ",") %>%
+  mutate(latitude = as.double(latitude),
+         longitude = as.double(longitude),
+         # create column combining name and line for later use
+         name_line = paste0(Nombre,",",Línea))
 
 # geocoding
-# enter your Bing Maps key
+# enter your Bing Maps key!
 # instruction to get a key at https://github.com/paldhous/refine-geocoder
 bingmapsKey <- "AgMAoU0H8oZK0QtLrUilQ4BjxHZfGjzLra3qADXFzmuKvjuTGwQwQI3noUWtP1gJ"
 
@@ -39,7 +50,7 @@ bingGeocode <- function(address,bingmapsKey) {
 # create empty list to hold geocoded data
 bing_list <- c()
 
-# loop through addresses to geocode. This will take a while, I would not run again.
+# loop through addresses to geocode. This will take a while.
 # error handling returns address alone if geocoding fails
 n <- 0
 for (address in private$address) {
@@ -54,12 +65,12 @@ for (address in private$address) {
   n <- n+1
   print(paste0("addresses geocoded by Bing Maps=",n))
 }
+
 # combine list into a single data frame
 bing_df <- bind_rows(bing_list) %>%
   select(2:5)
-
+# combine with original data
 private <- bind_cols(private,bing_df)
-
 
 #####
 # terminals 
@@ -67,7 +78,7 @@ private <- bind_cols(private,bing_df)
 # create empty list to hold geocoded data
 bing_list <- c()
 
-# loop through addresses to geocode. This will take a while, I would not run again.
+# loop through addresses to geocode. 
 # error handling returns address alone if geocoding fails
 n <- 0
 for (address in terminals$address) {
@@ -86,46 +97,118 @@ for (address in terminals$address) {
 bing_df <- bind_rows(bing_list) %>%
   select(2:5)
 
+# combine with original data
 terminals <- bind_cols(terminals,bing_df)
+
+# clean up environment
+rm(bing_list,bing_df,address,tmp,n,possibleError)
 
 # save geocoded data
 write_csv(terminals, "data/terminals_geocode.csv", na = "")
 write_csv(private, "data/private_geocode.csv", na = "")
 
-# will need to check failed or inaccurate locations manual
+# will need to check failed or inaccurate locations manually
 
 # read back in
 terminals <- read_csv("data/terminals_geocode_edit.csv")
 private <- read_csv("data/private_geocode_edit.csv")
 
-#########
-# create buffers around metro stations and terminals
+# convert clinics and metro stations to spatial points data frames
+# use epsg:3857 projection so units are in meters
+private <- as.data.frame(private) %>%
+  filter(!is.na(latitude))
+xy <- private %>%
+  select(longitude,latitude)
+private <- SpatialPointsDataFrame(coords = xy, 
+                                data = private, 
+                                proj4string = CRS("+init=epsg:3857"))
+# check projection
+raster::crs(private)
 
-terminals <- st_as_sf(terminals, coords = c("longitude","latitude"), crs = 6362)
-metro <- st_as_sf(metro, coords = c("longitude","latitude"), crs = 6362)
+# and for the metro stations
+metro <- as.data.frame(metro) %>%
+  filter(!is.na(latitude))
+xy <- metro %>%
+  select(longitude,latitude)
+metro <- SpatialPointsDataFrame(coords = xy, 
+                                data = metro, 
+                                proj4string = CRS("+init=epsg:3857"))
 
-# 1km around metro
-# 3km around terminals
+raster::crs(metro)
 
-test <- st_buffer(terminals, 1000)
+# clean up environment
+rm(xy)
 
-ggplot(test) + geom_sf()
+# calculate matrix of distances in km 
+# between the clinics and the metro stations
+# note division by 1000 to convert meters to km
+# this is where raster package is used
+distances <- raster::pointDistance(private, metro, lonlat = TRUE)/1000
 
+# convert to data frame, find the nearest metro station to each private clinic and straight line distance in km
+private_distances <- as.data.frame(t(distances))
+names(private_distances) <- private@data$clinic_private
+private_distances <- private_distances %>%
+  mutate(name_line = metro@data$name_line) %>%
+  gather(private_clinic,distance,-name_line) %>%
+  group_by(private_clinic) %>%
+  filter(distance == min(distance)) %>%
+  ungroup() %>%
+  separate(name_line, into = c("name","line"), sep = ",") %>%
+  bind_cols(private@data)
+
+# need this bit for now to filter out the incorrectly geocoded data 
+private_distances <- private_distances %>%
+  filter(distance < 10)
+
+
+#####################################
+# make map
+
+# set color palette
+pal <- colorNumeric("viridis", private_distances$distance, reverse = TRUE)
 
 # leaflet
-leaflet() %>%
+clinic_map <- leaflet(private_distances) %>%
   addProviderTiles("CartoDB.DarkMatter") %>%
-  addPolygons(data = test)
-  
-  
-  addMarkers(data = public,
-             ~long,~lat,
-             popup = paste0("<b>",public$Hospital,"</b><br>Abortions: ", public$`Abortions 2007-2020`),
-             group = "public") %>%
-  addMarkers(data = private_edit,
+  setView(lng = -99.15, lat = 19.4, zoom = 11) %>%
+  addCircleMarkers(data = public,
              ~longitude,~latitude,
-             group = "private") %>%
-  addLayersControl(overlayGroups = c("public","private"), 
-                   options = layersControlOptions(collapsed = FALSE))
+             radius = sqrt(public$abortions)/15, 
+             color = "#000000",
+             weight = 0.2,
+             fillColor ="#ffffff",
+             fillOpacity = 0.5,
+             popup = paste0("<b>",public$hospital,"</b><br>Abortos: ", prettyNum(public$abortions, big.mark = " ")),
+             group = "Hospitales públicos") %>%
+  addCircleMarkers(data = private_distances,
+             ~longitude,~latitude,
+             color = "#000000",
+             weight = 0.2,
+             fillColor = ~pal(distance),
+             radius = 10,
+             fillOpacity = 0.9,
+             popup = paste0("<b>",private_distances$private_clinic,
+             "<br>Estación de metro más cercana:</b> ", 
+             private_distances$name,", ",private_distances$line,"
+             <br><b>Distancia: </b>", round(private_distances$distance,2), " km"),
+             group = "Clínicas privadas") %>%
+  addLegend(
+    "bottomright",
+    pal = pal,
+    values = ~private_distances$distance,
+    title = "Distancia<br>a la stación<br>de metro (km)",
+    opacity = 0.9
+  ) %>%
+  addLayersControl(overlayGroups = c("Hospitales públicos","Clínicas privadas"), 
+                   options = layersControlOptions(collapsed = FALSE)) %>%
+  # this sets min zoom to zoom level on initial map render, prevents unwanted zoom out on scroll when embedded
+  onRender("
+    function(el, x) {
+      var myMap = this
+      this.options.minZoom = this.getZoom()
+    }
+  ")
 
-
+# save as web page
+saveWidget(clinic_map, "clinics.html", selfcontained = TRUE, background = "black")
