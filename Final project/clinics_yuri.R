@@ -26,7 +26,13 @@ metro <- metro %>%
   mutate(latitude = as.double(latitude),
          longitude = as.double(longitude),
          # create column combining name and line for later use
-         name_line = paste0(Nombre,",",Línea))
+         name_line = paste0(Nombre,",",Línea), 
+         Línea = case_when(grepl("Línea",Línea) ~ gsub("Metro ","", Línea),
+                           TRUE ~ gsub("Metro ","Línea ", Línea)))
+
+#change text 
+
+
 
 # geocoding
 # enter your Bing Maps key!
@@ -106,6 +112,8 @@ rm(bing_list,bing_df,address,tmp,n,possibleError)
 # save geocoded data
 write_csv(terminals, "data/terminals_geocode.csv", na = "")
 write_csv(private, "data/private_geocode.csv", na = "")
+
+
 
 # will need to check failed or inaccurate locations manually
 
@@ -198,16 +206,17 @@ clinic_map <- leaflet(private_distances) %>%
              popup = paste0("<b>",private_distances$private_clinic,
              "<br>Estación de metro más cercana:</b> ", 
              private_distances$name,", ",private_distances$line,"
-             <br><b>Distancia: </b>", round(private_distances$distance,2), " km"),
+             <br><b>Distancia: </b>", round(private_distances$distance,2), " km
+             <br> Tiempo estimado a pie </b>", round((private_distances$distance *12),0),"min"),
              group = "Clínicas privadas")%>%
   addLegend(
     "bottomright",
     pal = pal,
     values = ~private_distances$distance,
-    title = "Distancia<br>a la estación<br>de metro (km)",
+    title = "Distancia<br>a estación<br>de metro (km)",
     opacity = 0.9
   ) %>%
-  addLayersControl(overlayGroups = c("Hospitales públicos","Clínicas privadas"), 
+  addLayersControl(overlayGroups = c("Clínicas públicas","Clínicas privadas"), 
                    options = layersControlOptions(collapsed = FALSE)) %>%
   # this sets min zoom to zoom level on initial map render, prevents unwanted zoom out on scroll when embedded
   onRender("
@@ -217,6 +226,7 @@ clinic_map <- leaflet(private_distances) %>%
     }
   ")
 
+clinic_map
 
 # save as web page
 saveWidget(clinic_map, "clinics.html", selfcontained = TRUE, background = "black")
