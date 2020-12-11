@@ -6,9 +6,9 @@ AcércateFem Navarte,"Calle Palenque 336, Narvarte Poniente, Benito Juárez, 030
 AcércateFem Norte,"Poniente 110 306, Defensores de la República, Gustavo A. Madero, 07770 Ciudad de México, CDMX, Mexico",19.43267822265625,-99.13420867919922,PopulatedPlace,Medium
 Apprile Clínica,"Calle Xochicalco No.65 Colonia Narvarte, Del. Benito Juárez, CDMX, CP 03020.",19.38984,-99.16646,RoadBlock,High
 ASISTAMED,"Av. Talismán 38-22, Col. Estrella, Gustavo A. Madero, 07000 Ciudad de México, CDMX, Mexico",19.47542,-99.11161,Address,High
-Atención cálida ECOFEM Iztapalapa,"Calzada Ermita Iztapalapa 2720 esq Calle 33 Col. Sta. Cruz Meyehualco, Iztapalapa. CDMX",14.268389701843262,121.39757537841797,PopulatedPlace,Medium
-Atención cálida ECOFEM Zaragoza,"Calzada Ignacio Zaragoza 2300 Zona Urbana Ejidal Santa Martha Acatitla Norte. Iztapalapa, CDMX.",19.358591079711914,-99.0934066772461,AdminDivision2,Medium
-cálida ECOFEM Ampliación Santiago,Calle Flor de Campomo 46. Colonia 2a Ampliación Santiago Acahualtepec. C.P. 09609. Iztapalapa CDMX.,51.09328079223633,10.380292892456055,CountryRegion,Medium
+Atención cálida ECOFEM Iztapalapa,"Ermita Iztapalapa 2720, Santa Cruz Meyehualco, Iztapalapa, 09290 Ciudad de M�xico, CDMX",,,,
+Atención cálida ECOFEM Zaragoza,"Calzada Ignacio Zaragoza 2300 Zona Urbana Ejidal Santa Martha Acatitla Norte, 09800  Ciudad de Mexico, Iztapalapa, CDMX.",19.339242935180664,-99.1066665649414,Postcode1,Medium
+cálida ECOFEM Ampliación Santiago,"Calle Flor de Campomo 46. Colonia Segunda Ampliación Santiago Acahualtepec, Iztapalapa, 09609, CDMX.",19.352760314941406,-99.00469207763672,Neighborhood,Medium
 Centro de Salud Yashué Aeropuerto,"Calz. Ignacio Zaragoza 176, Moctezuma 1ra Secc, Venustiano Carranza, 15500 Ciudad de México, CDMX",19.42318,-99.10171,Address,High
 Centro Médico Mujer,"Av. Baja California 111 B, Colonia Roma, Cuauhtémoc",32.6036,-114.93288,Address,High
 "CIPA Coyoacán, Acompañame","Canal de Miramontes 2342, Coapa, Avante, Coyoacán, 04460 Ciudad de México, CDMX, Mexico",19.32657,-99.13665,Address,High
@@ -30,9 +30,9 @@ FemyCENTER,"Matanzas 645-A, Lindavista, Gustavo A. Madero, 07300 Ciudad de Méxi
 Fundación Médica Integral,"Av. Baja California 218, Roma Sur, Cuauhtémoc, 06760 Ciudad de México, CDMX, Mexico",19.40582,-99.16741,Address,High
 Ginecafem,"Frambuesa 192, Colonia Nueva Santa María, Azcapotzalco",19.99719,-99.34898,Neighborhood,High
 Gineclinic,"Calzada Santa Anita 148 B, Colonia Viaducto Piedad, Iztacalco",32.62724,-115.38752,RoadBlock,High
-GINELEM A.C.,"GINELEM, A.C. Bajío 369 Col. Hipódromo Condesa, Cuauhtémoc",19.413471221923828,-99.17569732666016,Neighborhood,Medium
+GINELEM A.C.,"Bajío 369 Col. Hipódromo Condesa, Cuauhtémoc, 06100 Ciudad de M�xico, CDMX",,,,
 Gineser,"Salina Cruz 54, Colonia Roma Sur, Cuauhtémoc",19.40186,-99.16481,Address,High
-Marie Stopes Aragón,"Plaza Morazán PB, Av. Hank González Esq. Con Francisco Morazán Col. San Juan de Aragón Del. Gustavo A. Madero, C.P. 07918, Ciudad de México",19.43267822265625,-99.13420867919922,PopulatedPlace,Medium
+Marie Stopes Aragón,"Plaza Morazán, Av. Hank González Esq. Con Francisco Morazán Col. San Juan de Aragón Del. Gustavo A. Madero, C.P. 07918, Ciudad de México",19.43267822265625,-99.13420867919922,PopulatedPlace,Medium
 Marie Stopes Azcapotzalco,"Av. 22 de Febrero #345 1er. piso. Col. Azcapotzalco Centro, Del. Azcapotzalco, C.P. 02000, Ciudad de México.",,,,
 Marie Stopes Centro Histórico,"Bolívar 21, Centro, CP 06000, Delegación Cuauhtémoc, CDMX",19.43397,-99.13831,Address,High
 Marie Stopes Coyoacán,"Av Miguel Ángel de Quevedo #1098 Col. Parque San Andrés, Del. Coyoacán, C.P. 04040, Ciudad de México.",,,,

@@ -1,6 +1,6 @@
 terminals,address,latitude,longitude,type,confidence
 Aeropuerto,"Aeropuerto Internacional de la, México (Lic. Benito Juárez), 15620 Ciudad de México, Mexico",19.43501,-99.26272,Neighborhood,High
 Terminal Observatorio,"Av Río de Tacubaya 87, Acueducto, Álvaro Obregón, 01120 Ciudad de México, CDMX, Mexico",19.39905,-99.19741,Address,High
-Terminal de Autobuses Poniente,"Calz. Ignacio Zaragoza 200, 10 de Mayo, Venustiano Carranza, 15290 Ciudad de México, CDMX, Mexico",19.42873,-99.11285,Address,High
+Terminal de Autobuses Poniente,"Calz. Ignacio Zaragoza 200, 10 de Mayo, Venustiano Carranza, 15290 Ciudad de México, CDMX, Mexico",19.42258,-99.10053,Address,High
 Terminal Norte,"Hospital Benito Juárez, Nte. 1-C 5100, Maximino Avila Camacho, Gustavo A. Madero, 07380 CDMX, Mexico",19.47802,-99.13767,RoadBlock,High
 Terminal Central Autobuses Sur,"Avenida Miguel Ángel de Quevedo 1105 El rosedal, Atlántida, Coyoacán, 04370 Ciudad de México, Mexico",19.3423,-99.14788,Address,High
