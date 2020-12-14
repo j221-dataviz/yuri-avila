@@ -1,5 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+   <style>
+     img {
+      width: 100%;
+     }
+   </style>
+
+  </head>
+
+	<body class="markdown github">
+
+  <div class="container">
 
 <h1 id="final-project"><a name="final-project" href="#final-project"></a>Final project</h1>
 <h3 id="access-to-abortion-clinics-in-mexico-city"><a name="access-to-abortion-clinics-in-mexico-city" href="#access-to-abortion-clinics-in-mexico-city"></a>Access to abortion clinics in Mexico City</h3>
@@ -13,9 +33,11 @@
 <p> <img src="img/private.png" alt=""></p>
 <p>For the public clinics, I added a tooltip with the number of abortions performed since 2007 when abortion was legalized. I’m assuming that the higher the number of abortions, the higher capacity of the hospitals to perform abortions.</p>
 <p> <img src="img/public.png" alt=""></p>
-<p>Here’s the interactive map! </p>
+<p>Here’s the interactive map: </p>
+
 <iframe src="clinicsfinal1.html" width= "100%" height="500" style="border:none;"><br></iframe>
 
+</div>
 
 
 
