@@ -3,17 +3,17 @@ A.I.E.D.,"Flor Silvestre, de campomo, Iztapalapa, 09609 Ciudad de México, CDMX,
 AcércateFem Aeropuerto,"Calle oriente 170, Número 310, Colonia Venustiano Carranza, Venustiano Carranza",28.63983,-100.55133,Address,High
 AcércateFem Coyoacán,"Cerro de La Juvencia 116, Campestre Churubusco, Coyoacán",19.34033,-99.137,Address,High
 AcércateFem Navarte,"Calle Palenque 336, Narvarte Poniente, Benito Juárez, 03020 Ciudad de México, CDMX, Mexico",19.3858,-99.15277,Address,High
-AcércateFem Norte,"Poniente 110 306, Defensores de la República, Gustavo A. Madero, 07770 Ciudad de México, CDMX, Mexico",19.43267822265625,-99.13420867919922,PopulatedPlace,Medium
+AcércateFem Norte,"Poniente 110 306, Defensores de la República, Gustavo A. Madero, 07770 Ciudad de México, CDMX, Mexico",19.475271224975586,-99.14308166503906,Neighborhood,Medium
 Apprile Clínica,"Calle Xochicalco No.65 Colonia Narvarte, Del. Benito Juárez, CDMX, CP 03020.",19.38984,-99.16646,RoadBlock,High
-ASISTAMED,"Av. Talismán 38-22, Col. Estrella, Gustavo A. Madero, 07000 Ciudad de México, CDMX, Mexico",19.47542,-99.11161,Address,High
+ASISTAMED,"Av. Talismán 38-22, Col. Estrella, Gustavo A. Madero, 07000 Ciudad de México, CDMX, Mexico",19.4754,-99.11164,Address,High
 Atención cálida ECOFEM Iztapalapa,"Ermita Iztapalapa 2720, Santa Cruz Meyehualco, Iztapalapa, 09290 Ciudad de M�xico, CDMX",,,,
 Atención cálida ECOFEM Zaragoza,"Calzada Ignacio Zaragoza 2300 Zona Urbana Ejidal Santa Martha Acatitla Norte, 09800  Ciudad de Mexico, Iztapalapa, CDMX.",19.339242935180664,-99.1066665649414,Postcode1,Medium
-cálida ECOFEM Ampliación Santiago,"Calle Flor de Campomo 46. Colonia Segunda Ampliación Santiago Acahualtepec, Iztapalapa, 09609, CDMX.",19.352760314941406,-99.00469207763672,Neighborhood,Medium
+cálida ECOFEM Ampliación Santiago,"Calle Flor de Campomo 46. Colonia Segunda Ampliación Santiago Acahualtepec, Iztapalapa, 09609, CDMX.",19.35517,-99.00219,RoadBlock,High
 Centro de Salud Yashué Aeropuerto,"Calz. Ignacio Zaragoza 176, Moctezuma 1ra Secc, Venustiano Carranza, 15500 Ciudad de México, CDMX",19.42318,-99.10171,Address,High
 Centro Médico Mujer,"Av. Baja California 111 B, Colonia Roma, Cuauhtémoc",32.6036,-114.93288,Address,High
 "CIPA Coyoacán, Acompañame","Canal de Miramontes 2342, Coapa, Avante, Coyoacán, 04460 Ciudad de México, CDMX, Mexico",19.32657,-99.13665,Address,High
-"CIPA Cuauhtémoc, Acompañame","Calz. de la Viga 371, Asturias, Cuauhtémoc, 06850 Ciudad de México, CDMX, Mexico",19.40555,-99.12675,RoadBlock,High
-CISAR Mujer,"Dr.Jose Terres 86-66, Doctores, Cuauhtémoc, 06720 Ciudad de México, CDMX, Mexico",19.41541,-99.14991,Address,High
+"CIPA Cuauhtémoc, Acompañame","Calz. de la Viga 371, Asturias, Cuauhtémoc, 06850 Ciudad de México, CDMX, Mexico",43.292354583740234,-5.993384838104248,AdminDivision1,Medium
+CISAR Mujer,"Dr.Jose Terres 86-66, Doctores, Cuauhtémoc, 06720 Ciudad de México, CDMX, Mexico",19.415076021225378,-99.15055376863917,Address,Low
 Clínica Ginecea,"Av Ejército Nacional 161, Verónica Anzúres, Miguel Hidalgo, 11300 Ciudad de México, CDMX, Mexico",19.43537,-99.17752,Address,High
 Clínica Mexfam La Villa,"Talara 103, Tepeyac Insurgentes, Gustavo A. Madero, 07020 Ciudad de México, CDMX, Mexico",19.48471,-99.1218,Address,High
 Clínica Mexfam Revolución,"Ponciano Arriaga 28, Tabacalera, Cuauhtémoc, 06030 Ciudad de México, CDMX, Mexico",19.27695,-99.12244,Address,High
@@ -21,12 +21,12 @@ Clínica Mexfam XOLA,"Calz. de Tlalpan 648A, Moderna, Benito Juárez, 03510 Ciud
 Clínica SARI,"Avenida de los Montes 60, Portales Sur, Benito Juárez, 03300 Ciudad de México, CDMX, Mexico",19.36357,-99.14333,Address,High
 Clínicas Fem,"Calle Venturina 28, Col. Estrella, Gustavo A. Madero, 07810 Ciudad de México, CDMX, Mexico",19.47132,-99.12821,RoadBlock,High
 Consultorio CIDEC,"Puerto Acapulco 98-90, Casas Alemán, Gustavo A. Madero, 07580 Ciudad de México, CDMX, Mexico",19.47805,-99.08415,Address,High
-Centro Dalia y Gaia,"Avenida 16 Número 74 General, Ignacio Zaragoza, Venustiano Carranza, 15000 CDMX, Mexico",19.41164,-99.09722,Address,High
+Centro Dalia y Gaia,"Avenida 16 Número 74 General, Ignacio Zaragoza, Venustiano Carranza, 15000 CDMX, Mexico",19.42727,-99.06546,RoadBlock,High
 CIFEM,"Gutenberg 61, Verónica Anzúres, Miguel Hidalgo, 11300 Ciudad de México, CDMX, Mexico",19.43334,-99.17335,Address,High
-Especialistas en ILE Aeropuerto,"Calle 3, No. 67, Valentín Gómez Farías, C.P. 15010, CDMX, México",29.35265,-107.73388,Address,High
-Femilemm,"Ingenieros 50-26, Escandón I Secc, Miguel Hidalgo, Ciudad de México, CDMX, Mexico",19.4474,-99.21603,Address,High
+Especialistas en ILE Aeropuerto,"Calle 3, No. 67, Valentín Gómez Farías, C.P. 15010, CDMX, México",19.38277,-99.11253,RoadBlock,High
+Femilemm,"Ingenieros 50-26, Escandón I Secc, Miguel Hidalgo, Ciudad de México, CDMX, Mexico",19.44748,-99.21606,Address,High
 Femisana Womens Clinic,"Orizaba 18, Roma Nte., Cuauhtémoc, 06700 Ciudad de México, CDMX, Mexico",19.41285,-99.15826,Address,High
-FemyCENTER,"Matanzas 645-A, Lindavista, Gustavo A. Madero, 07300 Ciudad de México, CDMX, Mexico",19.48981,-99.13309,Address,High
+FemyCENTER,"Matanzas 645-A, Lindavista, Gustavo A. Madero, 07300 Ciudad de México, CDMX, Mexico",19.49528,-99.12866,RoadBlock,High
 Fundación Médica Integral,"Av. Baja California 218, Roma Sur, Cuauhtémoc, 06760 Ciudad de México, CDMX, Mexico",19.40582,-99.16741,Address,High
 Ginecafem,"Frambuesa 192, Colonia Nueva Santa María, Azcapotzalco",19.99719,-99.34898,Neighborhood,High
 Gineclinic,"Calzada Santa Anita 148 B, Colonia Viaducto Piedad, Iztacalco",32.62724,-115.38752,RoadBlock,High
@@ -45,4 +45,4 @@ Profem,"Dr José María Vertiz 158, Doctores, Cuauhtémoc, 06720",19.41957,-99.1
 Promedica Mujer,"Avenida Baja California 111 B, Colonia Roma, Cuauhtémoc",32.6036,-114.93288,Address,High
 Servicios de Salud Medieg A.C.,"Calle Gabriel Mancera 803, Col del Valle Centro, Benito Juárez, 03100 Ciudad de México, CDMX, Mexico",19.38984,-99.16646,RoadBlock,High
 Unidades Médicas de la Mujer Consulado,"Av. Rio Consulado 1448, Vallejo, Gustavo A. Madero, 07870 Ciudad de México, CDMX, Mexico",19.46521,-99.13551,Address,High
-Unidades Médicas de la Mujer Tlalpan,"Calz. San Antonio Abad 296-B, Asturias, Cuauhtémoc, 06860 Ciudad de México, CDMX, Mexico",19.40698,-99.13573,Address,High
+Unidades Médicas de la Mujer Tlalpan,"Calz. San Antonio Abad 296-B, Asturias, Cuauhtémoc, 06860 Ciudad de México, CDMX, Mexico",19.407485287707253,-99.13573667519441,Address,High
